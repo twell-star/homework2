@@ -1,5 +1,7 @@
 # домашнее задание по Модулю №2
 
+# создаю переменные типа 'словарь' со структурой 'account'
+
 account1 = {'login': 'ivan', 'password': 'q1'}
 account2 = {'login': 'petr', 'password': 'q2'}
 account3 = {'login': 'olga', 'password': 'q3'}
