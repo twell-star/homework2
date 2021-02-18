@@ -26,3 +26,13 @@ key_name = input('Введите ключ (name или account):')
 
 key_name = key_name.lower()
 
+# проверка имени ключа через словарь 'user1'
+
+# try:
+#     control_key_name = user1[key_name]
+# except KeyError:
+#     print('Введенный ключ не найден')
+
+control_key_name = user1.get(key_name, 'Ключ не найден')
+print(control_key_name)
+
