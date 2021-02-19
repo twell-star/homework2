@@ -42,3 +42,15 @@ counter_user = 0  # определяю счетчик юзеров
 while counter_user < len(user_list):
     counter_user = counter_user + 1
     print(f"значение ключа {key_name} для юзера {counter_user} = {user_list[counter_user-1].get(key_name, 'Такой ключ не существует')}")
+
+# запрос ввода порядкового номера юзера
+
+user_number = input('Введите порядковый номер:')
+
+# вывод информации по юзеру
+
+print(f"Данные по юзеру № {user_number}:")
+print(f"имя: {user_list[int(user_number)-1].get('name')}")
+print(f"возраст: {user_list[int(user_number)-1].get('age')}")
+print(f"логин: {(user_list[int(user_number)-1].get('account')).get('login')}")
+print(f"логин: {(user_list[int(user_number)-1].get('account')).get('password')}")
