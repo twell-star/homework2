@@ -33,6 +33,6 @@ try:
 except KeyError:
     print('Введенный ключ не найден')
 
-control_key_name = user1.get(key_name, )
-print(control_key_name)
+print(f"значение ключа {key_name} для юзера 1 = {user1.get(key_name)}")
+
 
