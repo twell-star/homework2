@@ -60,7 +60,6 @@ while i <= len(user_list):
 
 try:
     control_list.index(int(user_number))
-    # control_user = user_list[int(user_number)-1]
     print(f"Данные по юзеру № {user_number}:")
     print(f"имя: {user_list[int(user_number)-1].get('name')}")
     print(f"возраст: {user_list[int(user_number)-1].get('age')}")
@@ -68,3 +67,28 @@ try:
     print(f"пароль: {(user_list[int(user_number)-1].get('account')).get('password')}")
 except:
     print('Пользователь с указанным номером не найден')
+
+# запрос ввода номера юзера, которого нужно перенести в конец списка
+
+user_remove = input('Введите номер пользователя, которого нужно переместить в конец:')
+
+# вывод списка до изменения
+
+print('Список до изменения:')
+print(user_list)
+
+# проверка корректности номера перемещаемого юзера и вывод измененного списка
+
+try:
+    control_list.index(int(user_remove))    # для проверки использую ранее созданный список 'control_list'
+    if int(user_remove) == len(user_list):
+        print(f"Не обижайте юзера по имени {user_list[int(user_remove)-1].get('name')}. Этот юзер и так в конце, список не изменился.")
+    else:
+        element_user = user_list[int(user_remove)-1]    # определяю элемент с перемещаемым юзером
+        user_list.remove(element_user)                  # удаляю перемещаемого юзера из списка
+        user_list.append(element_user)                  # добавляю перемещаемого пользователя в конец списка
+        print(f"Пользователь с именем {element_user.get('name')} перемещен в конец")
+        print('Список после изменения:')
+        print(user_list)
+except:
+    print('Пользователь с указанным номером не найден, список не изменился')
