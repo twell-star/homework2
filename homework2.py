@@ -47,10 +47,24 @@ while counter_user < len(user_list):
 
 user_number = input('Введите порядковый номер:')
 
-# вывод информации по юзеру
+# создаю список для контроля порядкового номера юзера
+# не хотел тупо вбивать [1, 2, 3, 4], ведь количество юзеров может меняться
 
-print(f"Данные по юзеру № {user_number}:")
-print(f"имя: {user_list[int(user_number)-1].get('name')}")
-print(f"возраст: {user_list[int(user_number)-1].get('age')}")
-print(f"логин: {(user_list[int(user_number)-1].get('account')).get('login')}")
-print(f"логин: {(user_list[int(user_number)-1].get('account')).get('password')}")
+control_list = []
+i = 1  # определяю вспомогательную переменную i
+while i <= len(user_list):
+    control_list.append(i)
+    i = i + 1
+
+# проверка порядкового номера и вывод информации по юзеру
+
+try:
+    control_list.index(int(user_number))
+    # control_user = user_list[int(user_number)-1]
+    print(f"Данные по юзеру № {user_number}:")
+    print(f"имя: {user_list[int(user_number)-1].get('name')}")
+    print(f"возраст: {user_list[int(user_number)-1].get('age')}")
+    print(f"логин: {(user_list[int(user_number)-1].get('account')).get('login')}")
+    print(f"пароль: {(user_list[int(user_number)-1].get('account')).get('password')}")
+except:
+    print('Пользователь с указанным номером не найден')
